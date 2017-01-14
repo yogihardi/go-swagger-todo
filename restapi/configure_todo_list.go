@@ -39,6 +39,14 @@ func configureAPI(api *operations.TodoListAPI) http.Handler {
 		return middleware.NotImplemented("operation todos.Get has not yet been implemented")
 	})
 
+	api.TodosDestroyOneHandler = todos.DestroyOneHandlerFunc(func(params todos.DestroyOneParams) middleware.Responder {
+		return middleware.NotImplemented("operation todos.DestroyOne has not yet been implemented")
+	})
+
+	api.TodosAddOneHandler = todos.AddOneHandlerFunc(func(params todos.AddOneParams) middleware.Responder {
+		return middleware.NotImplemented("operation todos.DestroyOne has not yet been implemented")
+	})
+
 	api.ServerShutdown = func() {}
 
 	return setupGlobalMiddleware(api.Serve(setupMiddlewares))
